@@ -1,3 +1,4 @@
+
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -34,37 +35,8 @@ mssql.on('error', (err)=> {
     console.log(err);
 });
 
-// Get Complete Data of a Table 9Simple Select Query without any where clause...)
-async function getProductReviewsDataAsyncFunction() {
-    try {
-        let pool = await mssql.connect(dbConfig);
-        let dbResult = await pool.request().query("SELECT * FROM [dbo].[product_reviews];");
-        console.log(dbResult.recordsets);
-        mssql.close();
-    } catch (error) {
-        console.log(error);
-        mssql.close();
-        throw error;
-    }
+
+module.exports = {
+    mssql,
+    dbConfig
 }
-
-// Get Filtered Data of a Table (i.e Select Query with Where Clause)
-async function getProductReviewsDataAsyncWithCondition() {
-    try {
-        let pool = await mssql.connect(dbConfig);
-        let dbResult = await pool
-            .request()
-            .input('review_id', mssql.Int, 2)
-            .query("SELECT * FROM [dbo].[product_reviews] WHERE id = @review_id;");
-        console.log(dbResult.recordset);
-        mssql.close();
-    } catch (error) {
-        console.log(error.message);
-        mssql.close();
-        throw error;
-    }
-}
-
-// getProductReviewsDataAsyncFunction();
-
-getProductReviewsDataAsyncWithCondition();

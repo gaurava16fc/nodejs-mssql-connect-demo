@@ -1,5 +1,15 @@
 "# nodejs-mssql-connect-demo" 
 
+Proof-of-Concept: A node.js project to demo on connecting MS-SQL-Server database and query using DML and Stored Procedure.
+
+We will be trying to achieve this task in below three diffrenet versions:
+    A). Async/Await (refer to "src\data-access\db-async-await.js")
+    B). Promises (Pending)
+    C). Callbacks (Pending)
+
+
+Pre-Requisites, as below:
+
 ************************************************************************
 -- MS SQL Server (Create DB, Login, user etc) -- You can change DB name and FileName for .mdf and .ldf as per your choice
 

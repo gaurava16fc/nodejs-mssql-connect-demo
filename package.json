@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
+    "db-main": "node src/data-access/db-main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

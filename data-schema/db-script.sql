@@ -92,11 +92,11 @@ GO
 SELECT * FROM [dbo].[product_reviews]
 GO
 
-IF OBJECT_ID(N'GetProductReviews') IS NOT NULL
-	DROP PROCEDURE GetProductReviews
+IF OBJECT_ID(N'[dbo].[GetProductReviews]') IS NOT NULL
+	DROP PROCEDURE [dbo].[GetProductReviews]
 GO
 
-CREATE PROCEDURE GetProductReviews
+CREATE PROCEDURE [dbo].[GetProductReviews]
 (
 	@ID INT = NULL
 )
@@ -109,5 +109,5 @@ BEGIN
 END
 GO
 
-EXEC GetProductReviews 5
+EXEC [dbo].[GetProductReviews] 5
 GO
