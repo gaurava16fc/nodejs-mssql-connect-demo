@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-mssql-connect-demo",
+  "version": "1.0.0",
+  "description": "POC to connect MSSQL database using Node.js program",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js-to-MSSQL-Connectivity"
+  ],
+  "author": "Gaurav Lal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mssql": "^8.0.2"
+  },
+  "devDependencies": {
+    "debug": "^4.3.3",
+    "dotenv": "^16.0.0"
+  }
+}
