@@ -57,7 +57,7 @@ const getProductReviewsDataCallbackWithCondition = (_id) => {
 
 
 // Get SQL Table Data via Stored Procedure with an input param which is optional by default (i.e. NULL to retrive complete data if not passed).
-const getProductReviewsDataCallbackViaSPROC = async (_id) => {
+const getProductReviewsDataCallbackViaSPROC = (_id) => {
     let reviewID = parseInt(_id);
     if (isNaN(reviewID)) {
         reviewID = null;
