@@ -4,8 +4,8 @@ Proof-of-Concept: A node.js project to demo on connecting MS-SQL-Server database
 
 We will be trying to achieve this task in below three diffrenet versions:
     A). Async/Await (refer to "src\data-access\db-async-await.js")
-    B). Promises (Pending)
-    C). Callbacks (Pending)
+    B). Promises (refer to "src\data-access\db-promise.js")
+    C). Callbacks (refer to "src\data-access\db-callbacks.js")
 
 
 Pre-Requisites, as below:
