@@ -1,8 +1,9 @@
+// USING ASYNC/AWAIT....
 
 const { mssql, dbConfig } = require('../common/db-configuration');
 
-// Get Complete Data of a Table 9Simple Select Query without any where clause...)
-const getProductReviewsDataAsyncFunction = async () => {
+// Get Complete Data of a Table (i.e. Simple Select Query without any where clause...)
+const getProductReviewsDataAsync = async () => {
     try {
         let pool = await mssql.connect(dbConfig);
         let dbResult = await pool.request().query("SELECT * FROM [dbo].[product_reviews];");
@@ -38,8 +39,7 @@ const getProductReviewsDataAsyncWithCondition = async (_id) => {
 
 
 // Get SQL Table Data via Stored Procedure with an input param which is optional by default (i.e. NULL to retrive complete data if not passed).
-// Hence we will create two different params to test this 1), With input Param and 2) without passign that params
-const getProductReviewsDataAsyncWithStoredProcWithParam = async (_id) => {
+const getProductReviewsDataAsyncViaSPROC = async (_id) => {
     let reviewID = parseInt(_id);
     if (isNaN(reviewID)) {
         reviewID = null;
@@ -60,7 +60,7 @@ const getProductReviewsDataAsyncWithStoredProcWithParam = async (_id) => {
 }
 
 module.exports = {
-    getProductReviewsDataAsyncFunction,
+    getProductReviewsDataAsync,
     getProductReviewsDataAsyncWithCondition,
-    getProductReviewsDataAsyncWithStoredProcWithParam
+    getProductReviewsDataAsyncViaSPROC
 }

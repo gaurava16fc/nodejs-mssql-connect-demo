@@ -1,18 +1,46 @@
 
-const { getProductReviewsDataAsyncFunction,
+const { getProductReviewsDataAsync,
     getProductReviewsDataAsyncWithCondition,
-    getProductReviewsDataAsyncWithStoredProcWithParam 
+    getProductReviewsDataAsyncViaSPROC 
 } = require('./db-async-await');
 
+const { getProductReviewsDataPromise,
+    getProductReviewsDataPromiseWithCondition,
+    getProductReviewsDataPromiseViaSPROC 
+} = require('./db-promise');
+
+// *************** ASYNC / AWAIT (STARTS HERE) *************************
+
+/*
 // INLINE DML QUERY METHOD...
-getProductReviewsDataAsyncFunction();
+getProductReviewsDataAsync();
 
 // INLINE QUERY (DML) WITH WHERE CALSUE METHOD...
 getProductReviewsDataAsyncWithCondition(2);
 
 // SP CALL WITHOUT PARAMS - retrieve all data rows in a table
-getProductReviewsDataAsyncWithStoredProcWithParam(null); 
+getProductReviewsDataAsyncViaSPROC(null); 
 
 // SP CALL WITH PARAMS - retrieve the data where id = 4
-getProductReviewsDataAsyncWithStoredProcWithParam(4); 
+getProductReviewsDataAsyncViaSPROC(4); 
 
+*/
+// *************** ASYNC / AWAIT (ENDS HERE) *************************
+
+// *************** PROMISE (STARTS HERE) *************************
+
+
+// INLINE DML QUERY METHOD...
+getProductReviewsDataPromise();
+
+// INLINE QUERY (DML) WITH WHERE CALSUE METHOD...
+getProductReviewsDataPromiseWithCondition(2);
+
+// SP CALL WITHOUT PARAMS - retrieve all data rows in a table
+getProductReviewsDataPromiseViaSPROC(null); 
+
+// SP CALL WITH PARAMS - retrieve the data where id = 4
+getProductReviewsDataPromiseViaSPROC(4); 
+
+
+// *************** PROMISE (ENDS HERE) *************************
